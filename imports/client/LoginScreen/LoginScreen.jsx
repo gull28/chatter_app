@@ -1,12 +1,13 @@
-import {Text, View, Button} from 'react-native';
+import {Text, View} from 'react-native';
+import FunctionalButton from '../../components/FunctionalButton';
 
 const LoginScreen = ({navigation}) => {
   return (
     <View>
-      <Text>LoginScreen {navigation.title}</Text>
-      <Button
+      <Text>LoginScreen</Text>
+      <FunctionalButton
         title="To Loading Screen"
-        onPress={() => navigation.navigate('LoadingScreen')}></Button>
+        onPress={() => navigation.navigate('LoadingScreen')}></FunctionalButton>
     </View>
   );
 };

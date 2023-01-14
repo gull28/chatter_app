@@ -1,13 +1,12 @@
 import {Button, Text, View} from 'react-native';
 
-const LoadingScreen = (props, navigation) => {
-  const onpress = navigation => {
-    navigation.navigate('LoginScreen');
-  };
+const LoadingScreen = ({navigation}) => {
   return (
     <View>
-      <Text>{props.title}</Text>
-      <Button title="Login Screen" onpress={onpress}></Button>
+      <Text>Hello world</Text>
+      <Button
+        title="To Login Screen"
+        onPress={() => navigation.navigate('LoginScreen')}></Button>
     </View>
   );
 };

@@ -1,23 +1,29 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import LoadingScreen from './imports/client/pages/LoadingScreen/LoadingScreen';
-import LoginScreen from './imports/client/LoginScreen/LoginScreen';
+import {LandingPage} from './imports/client/LandingPage/LandingPage';
+import {LoginScreen} from './imports/client/LoginScreen/LoginScreen';
+import {RegisterScreen} from './imports/client/RegisterScreen/RegisterScreen';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerBackVisible: false}}>
         <Stack.Screen
-          name="LoadingScreen"
-          component={LoadingScreen}
-          options={{title: 'Hello LoadingScreen'}}
+          name="LandingPage"
+          component={LandingPage}
+          options={{
+            headerLeft: () => null,
+          }}
         />
         <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
-          options={{title: 'Hello LoginScreen'}}
+          options={{
+            headerLeft: () => null,
+          }}
         />
+        <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,15 +1,18 @@
-import {Text, View} from 'react-native';
+import {Text, TextInput, View} from 'react-native';
 import FunctionalButton from '../../components/FunctionalButton';
 
-const LoginScreen = ({navigation}) => {
+export const LoginScreen = ({navigation}) => {
   return (
     <View>
       <Text>LoginScreen</Text>
+      <TextInput></TextInput>
+      <FunctionalButton title="Login" />
       <FunctionalButton
-        title="To Loading Screen"
-        onPress={() => navigation.navigate('LoadingScreen')}></FunctionalButton>
+        title="No account? Register now"
+        onClick={() => {
+          navigation.navigate('RegisterScreen');
+        }}
+      />
     </View>
   );
 };
-
-export default LoginScreen;
